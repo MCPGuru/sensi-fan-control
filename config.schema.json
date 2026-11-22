@@ -1,0 +1,51 @@
+{
+  "pluginAlias": "SensiFanPlatform",
+  "pluginType": "platform",
+  "singular": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "default": "Sensi"
+      },
+      "refreshToken": {
+        "type": "string",
+        "title": "Sensi Refresh Token",
+        "required": true,
+        "description": "Paste a Sensi refresh_token (from a POST to oauth.sensiapi.io/token). Or run: node ~/homebridge-sensi-fan/sensi-setup.js --login"
+      },
+      "fanSwitchSuffix": {
+        "type": "string",
+        "title": "Fan Switch Name Suffix",
+        "default": "Fan",
+        "description": "The fan switch is named '<Thermostat Name> <suffix>'. ON = fan runs continuously, OFF = fan returns to auto."
+      },
+      "exposeThermostat": {
+        "type": "boolean",
+        "title": "Expose Thermostat Controls",
+        "default": true
+      },
+      "exposeSensors": {
+        "type": "boolean",
+        "title": "Expose Temperature/Humidity Sensors",
+        "default": true
+      },
+      "clientId": {
+        "type": "string",
+        "title": "OAuth Client ID",
+        "default": "fleet",
+        "description": "Must match the client that issued the refresh token: 'ios' or 'android' for tokens captured from the mobile app, 'fleet' for the web portal."
+      },
+      "clientSecret": {
+        "type": "string",
+        "title": "OAuth Client Secret",
+        "description": "Required when Client ID is not 'fleet'."
+      }
+    },
+    "required": [
+      "refreshToken"
+    ]
+  }
+}

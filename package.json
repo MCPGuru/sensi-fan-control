@@ -1,0 +1,41 @@
+{
+  "name": "homebridge-sensi-fan",
+  "version": "1.2.0",
+  "description": "Homebridge plugin for Emerson Sensi thermostats with continuous-fan (on/auto) control",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rimraf ./dist",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "homebridge",
+    "sensi",
+    "thermostat",
+    "fan"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "homebridge": ">=1.6.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "ws": "^8.18.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.6.3",
+    "@types/ws": "^8.5.10"
+  },
+  "devDependencies": {
+    "homebridge": "^1.8.0"
+  },
+  "author": "MCPGuru (fork of homebridge-sensi by Kitra Drago)",
+  "license": "MIT",
+  "displayName": "Sensi Thermostat + Fan",
+  "pluginAlias": "SensiFanPlatform",
+  "pluginType": "platform",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MCPGuru/sensi-fan-control.git"
+  }
+}
